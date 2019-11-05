@@ -1,0 +1,25 @@
+#MyEclipse Hibernate Properties
+#Mon Sep 17 10:06:59 GMT+05:30 2012
+sessionFactoryName=com.water.pojo.HibernateSessionFactory
+genBasicCompId=true
+profile=
+daoSFId=
+version=3.0
+jndiPath=
+detectM2M=false
+reStrategyClass=
+detectO2O=true
+springDaoFile=
+useJavaTypes=true
+keyGenerator=increment
+libInstallFolder=WebRoot/WEB-INF/lib
+addLibs2Project=true
+genVersionTag=true
+sessionFactoryId=
+basePersistenceClass=TipsSuggessition
+genAnnotations=false
+reSettingsFile=/Water/hibernate.reveng.xml
+configFile=/Water/src/hibernate.cfg.xml
+createConfigFile=true
+addLibs2Classpath=true
+baseDaoClass=BaseHibernateDAO

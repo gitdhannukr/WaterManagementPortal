@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans>
+		<form-bean name="regionalFormBean" type="com.water.formbean.RegionalFormBean" />
+		<form-bean name="profileFormBean" type="com.water.formbean.ProfileFormBean" />
+		<form-bean name="GeneralFormBean" type="com.water.formbean.GeneralFormBean" />
+		<form-bean name="WaterFormBean" type="com.water.formbean.WaterFormBean" />
+
+	</form-beans>
+
+	<global-exceptions />
+	<global-forwards />
+	<action-mappings>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/addStateAction" scope="request" type="com.water.strutsaction.AddStateAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/AddState.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/viewRegStateAction" scope="request"
+			type="com.water.strutsaction.ViewRegStateAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/ViewStates.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/updateState" scope="request" type="com.water.strutsaction.StateUpdation">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/stateViewUpdation" scope="request"
+			type="com.water.strutsaction.StateViewUpdation">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/UpdateState.jsp" />
+		</action>
+		<action path="/deleteStateAction" type="com.water.strutsaction.DeleteStateAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/districtViewStateAction" scope="request"
+			type="com.water.strutsaction.DistrictViewStateAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/AddDistrict.jsp" />
+			<forward name="success" path="/AddDistrict.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/addDistrictAction" scope="request"
+			type="com.water.strutsaction.AddDistrictAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/viewSDistrictAction" scope="request"
+			type="com.water.strutsaction.ViewSDistrictAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/ViewDistricts.jsp" />
+			<forward name="success" path="/ViewDistricts.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/viewStateDistrictAction" scope="request"
+			type="com.water.strutsaction.ViewStateDistrictAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/ViewDistricts.jsp" />
+			<forward name="success" path="/ViewDistricts.jsp" />
+		</action>
+		<action path="/districtViewUpdation" type="com.water.strutsaction.DistrictViewUpdation">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/UpdateDistrict.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/UpdateDistrictAction" scope="request"
+			type="com.water.strutsaction.UpdateDistrictAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/DeleteDistrictAction" scope="request"
+			type="com.water.strutsaction.DeleteDistrictAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action path="/CityViewStateAction" type="com.water.strutsaction.CityViewStateAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/AddCity.jsp" />
+			<forward name="success" path="/AddCity.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/CityDistrictAction" scope="request"
+			type="com.water.strutsaction.CityDistrictAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/AddCity.jsp" />
+			<forward name="success" path="/AddCity.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/AddCityAction" scope="request" type="com.water.strutsaction.AddCityAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action path="/ViewCityViewStateAction" type="com.water.strutsaction.ViewCityViewStateAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/ViewCities.jsp" />
+			<forward name="success" path="/ViewCities.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/ViewCityViewDistrictAction" scope="request"
+			type="com.water.strutsaction.ViewCityViewDistrictAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/ViewCities.jsp" />
+			<forward name="success" path="/ViewCities.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/ViewCitiesAction" scope="request"
+			type="com.water.strutsaction.ViewCitiesAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="faliure" path="/ViewCities.jsp" />
+			<forward name="success" path="/ViewCities.jsp" />
+		</action>
+		<action path="/DeleteCitiesAction" type="com.water.strutsaction.DeleteCitiesAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action path="/CityViewUpdation" type="com.water.strutsaction.CityViewUpdation">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/UpdateCity.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/UpdateCityAction" scope="request"
+			type="com.water.strutsaction.UpdateCityAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action path="/CheckUserAction" type="com.water.strutsaction.CheckUserAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/UserRegistrationForm.jsp" />
+			<forward name="success" path="/UserRegistrationForm.jsp" />
+		</action>
+		<action attribute="profileFormBean" name="profileFormBean"
+			path="/RegisterPersonalAction" scope="request"
+			type="com.water.strutsaction.RegisterPersonalAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/ViewRegistrationStateAction.do" />
+		</action>
+		<action path="/ViewRegistrationStateAction"
+			type="com.water.strutsaction.ViewRegistrationStateAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Address.jsp" />
+			<forward name="success" path="/Address.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/ViewRegistrationCityViewDistrictAction" scope="request"
+			type="com.water.strutsaction.ViewRegistrationCityViewDistrictAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Address.jsp" />
+			<forward name="success" path="/Address.jsp" />
+		</action>
+		<action attribute="regionalFormBean" name="regionalFormBean"
+			path="/ViewRegistrationCitiesAction" scope="request"
+			type="com.water.strutsaction.ViewRegistrationCitiesAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/Address.jsp" />
+		</action>
+		<action attribute="profileFormBean" name="regionalFormBean"
+			path="/UserRegisterAction" scope="request"
+			type="com.water.strutsaction.UserRegisterAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/UserRegistrationForm.jsp" />
+		</action>
+		<action attribute="profileFormBean" name="profileFormBean"
+			path="/LoginAction" scope="request" type="com.water.strutsaction.LoginAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/HomePage.jsp" />
+		</action>
+		<action path="/LogoutAction" type="com.water.strutsaction.LogoutAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/LoginForm.jsp" />
+		</action>
+		<action attribute="profileFormBean" name="profileFormBean"
+			path="/RecoverPasswordAction" scope="request"
+			type="com.water.strutsaction.RecoverPasswordAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/RecoverPassword.jsp" />
+			<forward name="success" path="/NewPassword.jsp" />
+		</action>
+		<action attribute="profileFormBean" name="profileFormBean"
+			path="/NewPasswordAction" scope="request"
+			type="com.water.strutsaction.NewPasswordAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/HomePage.jsp" />
+		</action>
+		<action attribute="profileFormBean" name="profileFormBean"
+			path="/ChangePasswordAction" scope="request"
+			type="com.water.strutsaction.ChangePasswordAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/ChangePassword.jsp" />
+		</action>
+		<action path="/ViewProfileAction" type="com.water.strutsaction.ViewProfileAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/HomePage.jsp" />
+			<forward name="success" path="/ViewUserProfile.jsp" />
+		</action>
+		<action path="/ViewRegisteredUsersAction" type="com.water.strutsaction.ViewRegisteredUsersAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/ViewListUsers.jsp" />
+		</action>
+		<action path="/DeleteUserAction" type="com.water.strutsaction.DeleteUserAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action attribute="GeneralFormBean" input="/TipsSuggesstions.jsp"
+			name="GeneralFormBean" path="/AddTipsSuggestion" scope="request"
+			type="com.water.strutsaction.AddTipsSuggestion">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/TipsSuggesstions.jsp" />
+		</action>
+		<action path="/ViewTipsSuggesitionAction" type="com.water.strutsaction.ViewTipsSuggesitionAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/ViewTipsSuggesitions.jsp" />
+		</action>
+		<action path="/DeleteTipsAction" type="com.water.strutsaction.DeleteTipsAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action attribute="GeneralFormBean" input="/CityComplaint.jsp"
+			name="GeneralFormBean" path="/PostComplaintAction" scope="request"
+			type="com.water.strutsaction.PostComplaintAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/CityComplaint.jsp" />
+		</action>
+		<action attribute="GeneralFormBean" input="/FeedBack.jsp" name="GeneralFormBean"
+			path="/PostFeedbackAction" scope="request"
+			type="com.water.strutsaction.PostFeedbackAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/FeedBack.jsp" />
+		</action>
+		<action path="/ViewFeedBackAction" type="com.water.strutsaction.ViewFeedBackAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/ViewFeedBacks.jsp" />
+		</action>
+		<action path="/DeleteFeedbackAction" type="com.water.strutsaction.DeleteFeedbackAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action attribute="GeneralFormBean" input="/AddEnquiryDetails.jsp"
+			name="GeneralFormBean" path="/EnquiryFormAction" scope="request"
+			type="com.water.strutsaction.EnquiryFormAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/AddEnquiryDetails.jsp" />
+		</action>
+		<action path="/ViewEmquiryInfoAction" type="com.water.strutsaction.ViewEmquiryInfoAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/ViewEnquiryQuestions.jsp" />
+		</action>
+		<action path="/DeleteEnquiryQuestionAction"
+			type="com.water.strutsaction.DeleteEnquiryQuestionAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action attribute="GeneralFormBean" input="/EnquiryAnswer.jsp"
+			name="GeneralFormBean" path="/EnquiryAnswerAction" scope="request"
+			type="com.water.strutsaction.EnquiryAnswerAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action attribute="GeneralFormBean" input="/AddEducationDetails.jsp"
+			name="GeneralFormBean" path="/AddCareerInfoAction" scope="request"
+			type="com.water.strutsaction.AddCareerInfoAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/AddEducationDetails.jsp" />
+		</action>
+		<action path="/ViewEduInfoAction" type="com.water.strutsaction.ViewEduInfoAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/ViewCareerInformation.jsp" />
+		</action>
+		<action attribute="GeneralFormBean" name="GeneralFormBean"
+			path="/ViewComplaintsAction" scope="request"
+			type="com.water.strutsaction.ViewComplaintsAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/ViewCitizenComplaints.jsp" />
+		</action>
+		<action attribute="GeneralFormBean" name="GeneralFormBean"
+			path="/DeleteComplaintsAction" scope="request"
+			type="com.water.strutsaction.DeleteComplaintsAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action attribute="GeneralFormBean" name="GeneralFormBean"
+			path="/ComplaintAnswerAction" scope="request"
+			type="com.water.strutsaction.ComplaintAnswerAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action attribute="WaterFormBean" name="WaterFormBean"
+			path="/AddWaterSupplyDetailsAction" scope="request"
+			type="com.water.strutsaction.AddWaterSupplyDetailsAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action path="/ViewCityWaterSupplyTimingsAction"
+			type="com.water.strutsaction.ViewCityWaterSupplyTimingsAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/ViewWaterSupplyTimeings.jsp" />
+		</action>
+		<action path="/DeleteWaterSupplyInfoAction"
+			type="com.water.strutsaction.DeleteWaterSupplyInfoAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/Status.jsp" />
+			<forward name="failure" path="/Status.jsp" />
+		</action>
+		<action attribute="WaterFormBean" input="/UpdateWaterSupply.jsp"
+			name="WaterFormBean" path="/UpdateWaterSupplyRecord" scope="request"
+			type="com.water.strutsaction.UpdateWaterSupplyRecord">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/UpdateWaterSupply.jsp" />
+		</action>
+		<action attribute="WaterFormBean" name="WaterFormBean"
+			path="/UpdateWaterSupplyDetailsAction" scope="request"
+			type="com.water.strutsaction.UpdateWaterSupplyDetailsAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action attribute="WaterFormBean" name="WaterFormBean" path="/WaterInfoAction"
+			scope="request" type="com.water.strutsaction.WaterInfoAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action path="/ViewWaterInfoAction" type="com.water.strutsaction.ViewWaterInfoAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="fialure" path="/Status.jsp" />
+			<forward name="success" path="/ViewWaterInformation.jsp" />
+		</action>
+		<action path="/ViewAdminWaterInfoAction" type="com.water.strutsaction.ViewAdminWaterInfoAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/ViewAdminWaterInformation.jsp" />
+		</action>
+		<action path="/DeleteWaterInfoAction" type="com.water.strutsaction.DeleteWaterInfoAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+		<action attribute="WaterFormBean" input="/AddBusinessDetails.jsp"
+			name="WaterFormBean" parameter="status" path="/AddBusinessDetails"
+			scope="request" type="com.water.strutsaction.AddBusinessDetails">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/AddBusinessDetails.jsp"
+				redirect="true" />
+			<forward name="success" path="/AddBusinessDetails.jsp"
+				redirect="true" />
+		</action>
+		<action path="/ViewWaterCostDetailsAction"
+			type="com.water.strutsaction.ViewWaterCostDetailsAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/ViewWaterCostDetails.jsp" />
+			<forward name="success" path="/ViewWaterCostDetails.jsp" />
+		</action>
+		<action path="/UpdateViewWaterCostDetailsAction"
+			type="com.water.strutsaction.UpdateViewWaterCostDetailsAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="success" path="/UpdateViewWaterCostDetails.jsp" />
+		</action>
+		<action attribute="WaterFormBean" input="/UpdateViewWaterCostDetails.jsp"
+			name="WaterFormBean" path="/UpdateWaterCostAction" scope="request"
+			type="com.water.strutsaction.UpdateWaterCostAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="failure" path="/Status.jsp" />
+			<forward name="success" path="/Status.jsp" />
+		</action>
+    <action path="/DeletewaterCostAction" type="com.water.strutsaction.DeletewaterCostAction">
+      <set-property property="cancellable" value="true" />
+      <forward name="failure" path="/Status.jsp" />
+      <forward name="success" path="/Status.jsp" />
+    </action>
+
+	</action-mappings>
+
+	<message-resources parameter="com.water.strutsaction.ApplicationResources" />
+</struts-config>
+

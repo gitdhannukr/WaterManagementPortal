@@ -1,0 +1,68 @@
+<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<jsp:include page="./UserCheck.jsp"></jsp:include>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml2/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<base href="<%=basePath%>">
+
+		<title>My JSP 'ViewTipsSuggesitions.jsp' starting page</title>
+
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="This is my page">
+		<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
+
+	</head>
+
+	<body bgcolor='white'>
+		<form action="./DeleteTipsAction.do" mehtod='post'>
+
+			<jsp:include page="Header.jsp"></jsp:include>
+			<br />
+			<center>
+				<h2>
+					<font color='#B8B8B8 '><%=request.getAttribute("water")%>
+						Information</font>
+				</h2>
+			</center>
+			<center>
+				<table border='0'>
+					<c:if test="${not empty vWaterInfoPojos}">
+						<c:forEach var="water" items="${vWaterInfoPojos}">
+							<tr>
+								<b> ${water.header} </b>
+							</tr>
+							<tr>
+								<a href="${water.filepath}"><b>ViewFile</b> </a>
+							</tr>
+							<tr>
+								<a href="${water.url}"><b>SiteUrl</b> </a>
+							</tr>
+							<tr>
+								<td>
+									<b> ${water.information} </b>
+								</td>
+							</tr>
+						</c:forEach>
+					</c:if>
+				</table>
+			</center>
+		</form>
+	</body>
+
+	<br />
+	<jsp:include page="./Footer.jsp"></jsp:include>
+
+</html>
